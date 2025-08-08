@@ -1,14 +1,20 @@
-// src/components/Team.jsx
-import React from 'react'
-import team1 from '../assets/alex.webp'
-import team2 from '../assets/elmer.webp'
+import React from 'react';
+import team1 from '../assets/alex.webp';
+import team2 from '../assets/elmer.webp';
 
-const team = [
+// Define the shape of a team member
+interface TeamMember {
+  name: string;
+  role: string;
+  img: string;
+}
+
+const team: TeamMember[] = [
   { name: "Liam Carter", role: "Founder & CEO", img: team1 },
   { name: "Dev Patel", role: "Lead Engineer", img: team2 }
-]
+];
 
-export default function Team() {
+const Team: React.FC = () => {
   return (
     <section id="team" className="bg-light py-5">
       <div className="container">
@@ -16,7 +22,14 @@ export default function Team() {
         <div className="row justify-content-center">
           {team.map((member, idx) => (
             <div className="col-md-4 text-center mb-4" key={idx}>
-              <img src={member.img} className="rounded-circle mb-3" alt={member.name} width="150" height="150" loading="lazy" />
+              <img
+                src={member.img}
+                className="rounded-circle mb-3"
+                alt={member.name}
+                width={150}
+                height={150}
+                loading="lazy"
+              />
               <h5>{member.name}</h5>
               <p className="text-muted">{member.role}</p>
             </div>
@@ -24,5 +37,7 @@ export default function Team() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Team;

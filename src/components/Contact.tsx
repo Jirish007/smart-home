@@ -1,7 +1,6 @@
-// src/components/Contact.jsx
-import React from 'react'
+import React from 'react';
 
-export default function Contact() {
+const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-5">
       <div className="container">
@@ -19,7 +18,7 @@ export default function Contact() {
               </div>
               <div className="mb-3">
                 <label className="form-label">Message</label>
-                <textarea className="form-control" rows="4" placeholder="Your message..."></textarea>
+                <textarea className="form-control" rows={4} placeholder="Your message..."></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
                 <i className="bi bi-send-fill me-2"></i>Send Message
@@ -29,5 +28,7 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Contact;

@@ -1,7 +1,6 @@
-// src/components/Footer.jsx
-import React from 'react'
+import React from 'react';
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-dark text-white text-center py-4">
       <div className="container">
@@ -10,5 +9,7 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;

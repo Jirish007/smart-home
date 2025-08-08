@@ -1,10 +1,17 @@
-// src/components/Services.jsx
-import React from 'react'
-import service1 from '../assets/automation.webp'
-import service2 from '../assets/security.webp'
-import service3 from '../assets/energy.webp'
+import React from 'react';
+import service1 from '../assets/automation.webp';
+import service2 from '../assets/security.webp';
+import service3 from '../assets/energy.webp';
 
-const services = [
+// Define the shape of a service
+interface Service {
+  title: string;
+  desc: string;
+  icon: string;
+  img: string;
+}
+
+const services: Service[] = [
   {
     title: "Home Automation",
     desc: "Control lights, appliances, and more from anywhere.",
@@ -23,9 +30,9 @@ const services = [
     icon: "bi-battery-charging",
     img: service3
   }
-]
+];
 
-export default function Services() {
+const Services: React.FC = () => {
   return (
     <section id="services" className="py-5 bg-light">
       <div className="container">
@@ -34,7 +41,12 @@ export default function Services() {
           {services.map((s, i) => (
             <div className="col-md-4 mb-4" key={i}>
               <div className="card h-100">
-                <img src={s.img} className="card-img-top" alt={s.title} loading="lazy" />
+                <img
+                  src={s.img}
+                  className="card-img-top"
+                  alt={s.title}
+                  loading="lazy"
+                />
                 <div className="card-body text-center">
                   <i className={`bi ${s.icon} fs-1 text-primary mb-3`}></i>
                   <h5 className="card-title">{s.title}</h5>
@@ -46,5 +58,7 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Services;

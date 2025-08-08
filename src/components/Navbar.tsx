@@ -1,8 +1,7 @@
-// src/components/Navbar.jsx
-import React from 'react'
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-export default function Navigation() {
+const Navigation: React.FC = () => {
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Container>
@@ -22,5 +21,7 @@ export default function Navigation() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
+
+export default Navigation;
